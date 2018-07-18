@@ -1,0 +1,46 @@
+import java.util.*;
+public class rps {
+	public static void main(String args[]){
+		Random t = new Random();
+		Scanner sc = new Scanner(System.in);
+		String s[] ={"rock","paper","scissor"};
+		int a=0,b=0;
+		 System.out.println("LET'S PLAY ROCK,PAPER,SCISSORS\n first to win 5 points is the winner");
+		while(a<5&&b<5){
+			System.out.println("Enter 'rock', 'paper' or'scissor'");
+			String h = sc.next();
+			String j = s[t.nextInt(3)];
+			System.out.println(" "+j);
+			if(h.compareToIgnoreCase("rock")==0&&j.compareToIgnoreCase("scissor")==0){
+				a++;
+				System.out.println("YOU: "+a+"\tPC: "+b);
+			}
+			else if(h.compareToIgnoreCase("scissor")==0&&j.compareToIgnoreCase("rock")==0){
+				b++;
+				System.out.println("YOU: "+a+"\tPC: "+b);
+			}
+			else if(h.compareToIgnoreCase("rock")==0&&j.compareToIgnoreCase("paper")==0){
+				b++;
+				System.out.println("YOU: "+a+"\tPC: "+b);
+			}
+			else if(h.compareToIgnoreCase("paper")==0&&j.compareToIgnoreCase("rock")==0){
+				a++;
+				System.out.println("YOU: "+a+"\tPC: "+b);
+			}
+			else if(h.compareToIgnoreCase("paper")==0&&j.compareToIgnoreCase("scissor")==0){
+				b++;
+				System.out.println("YOU: "+a+"\tPC: "+b);
+			}
+			else if(h.compareToIgnoreCase("scissor")==0&&j.compareToIgnoreCase("paper")==0){
+				a++;
+				System.out.println("YOU: "+a+"\tPC: "+b);
+			}
+		}
+		if(a==5)
+			System.out.println("YOU ARE THE WINNER");
+		else
+			System.out.println("YOU LOSE");
+		sc.close();
+	}
+
+}
